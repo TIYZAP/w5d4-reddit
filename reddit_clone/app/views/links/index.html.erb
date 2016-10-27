@@ -1,0 +1,39 @@
+<div class="jumbotron">
+<h5>Welcome to</h5>
+<h1>Reddit (Clone)</h1>
+</div>
+
+<table class="table">
+
+  <thead>
+          <tr>
+
+              <th>
+
+              </th>
+
+          </tr>
+
+        </thead>
+        <tbody>
+          <%@links.each do |link|%>
+          <tr>
+            <td>
+              <%= link_to upvote_link_path(link), class: "btn btn-xs btn-block" do%>
+              <i class ="glyphicon glyphicon-arrow-up"></i>
+              <%end%>
+
+              <%= link.votes %>
+
+              <%= link_to downvote_link_path(link), class: "btn btn-xs btn-block" do%>
+              <i class ="glyphicon glyphicon-arrow-down"></i>
+              <%end%>
+            </td>
+
+            <td>
+              <%=link_to(link.title, link.url)%>
+            </td>
+          </tr>
+          <%end%>
+        </tbody>
+      </table>
