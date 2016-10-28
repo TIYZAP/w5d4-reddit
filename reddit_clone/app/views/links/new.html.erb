@@ -1,0 +1,16 @@
+<%= simple_form_for @links do |f| %>
+
+<div>
+  <%= f.association :user, label_method: "#{:username}"  %>
+</div>
+  <div>
+    <%= f.input :title %>
+  </div>
+  <div>
+    <%= f.input :url %>
+  </div>
+  <div>
+    <%= f.input :summary %>
+  </div>
+    <%= f.submit %>
+    <%end%>

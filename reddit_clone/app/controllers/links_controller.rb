@@ -12,6 +12,7 @@ class LinksController < ApplicationController
 
   def create
     @links = Link.new(links_params)
+    @links.votes = 1
     if @links.save
       redirect_to root_path
     else

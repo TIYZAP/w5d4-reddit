@@ -4,9 +4,10 @@ Rails.application.routes.draw do
     member do
       get 'upvote'
       get 'downvote'
+      get 'new'
     end
   end
-
+  resources :users
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
