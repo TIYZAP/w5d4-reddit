@@ -1,0 +1,33 @@
+<div class="jumbotron">
+  <h4 class="text-center">Welcome to Zach's...</h4>
+  <h1 class="text-center">Reddit (Clone)</h1>
+  <h3><%= button_to "Submit", new_link_path, :method => :get %></h3>
+  <h3><%= button_to "Create Account", new_user_path, :method => :get %></h3>
+</div>
+
+<table class="table">
+
+  <tbody>
+    <%@links.each do |link|%>
+    <tr>
+      <td>
+        <%= link_to upvote_link_path(link), class: "btn btn-xs btn-block" do%>
+        <i class ="glyphicon glyphicon-arrow-up"></i>
+        <%end%>
+
+        <h5 class="text-center">
+          <%= link.votes %>
+        </h5>
+
+        <%= link_to downvote_link_path(link), class: "btn btn-xs btn-block" do%>
+        <i class ="glyphicon glyphicon-arrow-down"></i>
+        <%end%>
+      </td>
+
+      <td>
+        <%=link_to(link.title, link.url)%>
+      </td>
+    </tr>
+    <%end%>
+  </tbody>
+</table>
