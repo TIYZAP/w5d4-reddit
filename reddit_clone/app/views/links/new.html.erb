@@ -1,7 +1,7 @@
 <%= simple_form_for @links do |f| %>
 
 <div>
-  <%= f.association :user, label_method: "#{:username}"  %>
+  <%= f.association :user, label_method: :username  %>
 </div>
   <div>
     <%= f.input :title %>
