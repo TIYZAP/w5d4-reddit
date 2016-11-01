@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028184939) do
+ActiveRecord::Schema.define(version: 20161031175321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,9 +28,10 @@ ActiveRecord::Schema.define(version: 20161028184939) do
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
-    t.string   "string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "email_address"
+    t.string   "password_digest"
   end
 
   add_foreign_key "links", "users"

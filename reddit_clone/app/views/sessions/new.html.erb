@@ -1,0 +1,9 @@
+<div class="jumbotron">
+  <h4 class="text-center">Welcome to Zach's...</h4>
+  <h1 class="text-center">Reddit (Clone)</h1>
+  </div>
+<%= simple_form_for :sessions, url: login_path do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+  <%= f.submit %>
+<% end %>

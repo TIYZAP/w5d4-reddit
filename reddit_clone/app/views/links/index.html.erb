@@ -1,6 +1,7 @@
 <div class="jumbotron">
   <h4 class="text-center">Welcome to Zach's...</h4>
   <h1 class="text-center">Reddit (Clone)</h1>
+  <h3><%= button_to "Log-In", login_path, :method => :get %></h3>
   <h3><%= button_to "Submit", new_link_path, :method => :get %></h3>
   <h3><%= button_to "Create Account", new_user_path, :method => :get %></h3>
 </div>
@@ -25,7 +26,7 @@
       </td>
 
       <td>
-        <%=link_to(link.title, link.url)%>
+        <%=link_to(link.title, visit_link_path(link))%>
       </td>
     </tr>
     <%end%>
