@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h4 class="text-center">Welcome to Zach's...</h4>
+  <h1 class="text-center">Reddit (Clone)</h1>
+  </div>
+  <%= simple_form_for user do |f| %>
+  <%= f.input :username %>
+  <%= f.input :email_address %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <%= f.submit %>
+<% end %>
+
+
+<!--OR: This is the old form-->
+
+<!-- <%= simple_form_for @user do |f| %>
+<div>
+    <%= f.input :username  %>
+    <%= f.input :password %>
+</div>
+<%= f.submit %>
+<%end%> -->

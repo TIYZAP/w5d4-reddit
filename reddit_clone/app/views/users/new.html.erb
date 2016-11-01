@@ -1,6 +1,2 @@
-<%= simple_form_for @user do |f| %>
-<div>
-    <%= f.text_field :username  %>
-</div>
-<%= f.submit %>
-<%end%>
+
+<%= render 'form', user: @user %>

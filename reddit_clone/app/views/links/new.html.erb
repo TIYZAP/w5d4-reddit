@@ -1,7 +1,12 @@
+<div class="jumbotron">
+  <h4 class="text-center">Welcome to Zach's...</h4>
+  <h1 class="text-center">Reddit (Clone)</h1>
+  </div>
+
 <%= simple_form_for @links do |f| %>
 
 <div>
-  <%= f.association :user, label_method: :username  %>
+  <!-- <%= f.association :user, label_method: :username  %> -->
 </div>
   <div>
     <%= f.input :title %>
@@ -10,7 +15,7 @@
     <%= f.input :url %>
   </div>
   <div>
-    <%= f.input :summary %>
+    <!-- <%= f.input :summary %> -->
   </div>
     <%= f.submit %>
     <%end%>
