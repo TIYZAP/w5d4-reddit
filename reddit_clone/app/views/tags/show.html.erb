@@ -4,11 +4,12 @@
   <h3><%= button_to "Log-In", login_path, :method => :get %></h3>
   <h3><%= button_to "Submit", new_link_path, :method => :get %></h3>
   <h3><%= button_to "Create Account", new_user_path, :method => :get %></h3>
-</div>
+  </div>
 
+  <h1><%= @tag.name.titleize %> links</h1>
 
-<table class="table">
+  <table class="table">
   <tbody>
-      <%= render @links%>
+    <%= render @tag.links %>
   </tbody>
-</table>
+  </table>

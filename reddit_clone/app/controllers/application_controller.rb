@@ -27,3 +27,9 @@ class ApplicationController < ActionController::Base
   end
 
 end
+
+# def forbid_login
+#   if current_user
+#   flash[:warning] = "You are currently logged in!"
+#   redirect_to :root
+# end

@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
         session[:user_id] = user.id
         redirect_to :root
       else
-        flash[:warning] = "Incorrect password!"
+        flash.now[:warning] = "Incorrect password!"
         render :new
       end
     else
