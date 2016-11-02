@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path
     else
-      flash[:warning] = "ah ah ah. You didn't say the magic word..."
+      flash.now[:warning] = "ah ah ah. You didn't say the magic word..."
       render :new
     end
   end

@@ -16,6 +16,11 @@ class LinksController < ApplicationController
     @links.votes = 1
     @links = current_user.links.new(links_params)
     if @links.save
+      tag_names = params[:link][:tag_names].split(",")
+      tag_names = tag_names.collect(&:strip)
+      tag_names.each do |name|
+        @links.tags << Tag.find_or_initialize_by(name: name)
+      end
       flash[:success] = "Your link is posted!"
       redirect_to root_path
     else
@@ -57,14 +62,16 @@ end
 
 
   def visit
+    if current_user
     @links = Link.find(params[:id])
-    @links.votes +=1
-    @links.save
+    @links.votes += 1
+    @links.save!
     redirect_to @links.url
+    end
   end
 
   def links_params
-    params.require(:link).permit(:title, :url, :summary)
+    params.require(:link).permit(:title, :url, :email_address)
   end
 
 end

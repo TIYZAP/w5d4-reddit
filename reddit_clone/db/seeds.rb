@@ -5,11 +5,46 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
- 10.times do
 
-  link = Link.create(
+
+
+  @users = []
+
+  10.times do
+
+  @users << User.create!(
+  username: Faker::StarWars.character + "#{rand(1..1000)}",
+  email_address: Faker::Internet.email,
+  password: "admin"
+  )
+  end
+
+  @links = []
+
+  10.times do
+
+  @links << Link.create(
   title: Faker::Hacker.say_something_smart,
+  user: @users.sample,
   url: Faker::Internet.url,
   votes: rand(1..100)
   )
-end
+  end
+
+
+  @tags = []
+
+  10.times do
+
+  @tags << Tag.create!(
+    name: Faker::Hacker.noun
+  )
+  end
+
+  100.times do
+
+    Tagging.create!(
+    link: @links.sample,
+    tag: @tags.sample
+    )
+  end
